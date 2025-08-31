@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECON Interiors & Constructions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    body {font-family: Arial, sans-serif; background: #fff;}
+    .navbar {background-color: #220b01;}
+    .navbar-nav .nav-link {color: #fff; font-weight: 600;}
+    .navbar-nav .nav-link:hover {color: #ffcccc;}
+    .hero-section {position: relative; text-align: center; color: #fff;}
+    .hero-section img {width: 100%; height: 600px; object-fit: cover; filter: brightness(0.6);}
+    .hero-text {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .hero-text h1 {font-size: 2.5rem; font-weight: bold;}
+    .hero-text p {font-size: 1.2rem;}
+    .section-title {color:#220b01; font-weight: bold; margin-bottom: 40px;}
+    .card {border-radius: 15px;}
+    .gallery-item {position:relative; overflow:hidden; border-radius:15px; cursor:pointer;}
+    .gallery-item img {transition: transform 0.5s;}
+    .gallery-item:hover img {transform: scale(1.1);}
+    .gallery-overlay {position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(123,15,15,0.6);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s;}
+    .gallery-item:hover .gallery-overlay {opacity:1;}
+    footer {background:#220b01; color:#fff; padding:20px 0;}
+    .floating-buttons {position:fixed;bottom:20px;right:20px;z-index:999;display:flex;flex-direction:column;gap:10px;}
+    .floating-buttons a {display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;color:#fff;}
+    .floating-buttons .call {background:#220b01;}
+    .floating-buttons .whatsapp {background:#25d366;}
+
+    /* Lightbox */
+    .lightbox {display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;}
+    .lightbox img {max-width:90%;max-height:80%;}
+    .lightbox:target {display:flex;}
+    .lightbox .close, .lightbox .prev, .lightbox .next {
+      position:absolute;top:50%;transform:translateY(-50%);
+      color:#fff;font-size:2rem;text-decoration:none;padding:10px;cursor:pointer;
+    }
+    .lightbox .close {top:20px;right:30px;transform:none;font-size:2.5rem;}
+    .lightbox .prev {left:30px;}
+    .lightbox .next {right:30px;}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">
+        <img src="images/recon-logo.png" alt="RECON Logo" height="60"> RECON
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Static Image with Business Name and Tagline -->
+  <section class="hero-section">
+    <img src="images/hero_image.jpeg" alt="Hero Image">
+    <div class="hero-text">
+      <h1>RECON Interiors and Constructions</h1>
+      <p>"Build with the Best"</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-5 container text-center">
+    <h2 class="section-title">About Us</h2>
+    <p>RECON Interiors and Constructions is committed to providing quick turnaround and highly practical, cost-effective solutions for engineering and design requirements. Known for excellent customer service, collaboration with developers, architects, and contractors, we ensure projects move forward without delays.</p>
+  </section>
+
+  <!-- Packages -->
+  <section id="packages" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">Packages for Building Constructions</h2>
+      <div class="row text-center">
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Classic</h4><p class="text-danger fw-bold">₹1,872/sq.ft</p></div></div>
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Standard</h4><p class="text-danger fw-bold">₹2,151/sq.ft</p></div></div>
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Premium-I</h4><p class="text-danger fw-bold">₹2,511/sq.ft</p></div></div>
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Premium-II</h4><p class="text-danger fw-bold">₹2,691/sq.ft</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-5 container">
+    <h2 class="section-title text-center">Our Services</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3"><div class="card p-3">Building Permission & CC</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Approval Drawing & Estimation</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Interior Designing</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Exterior Designing</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Building Contract</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Renovation & Restoration</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">RCC & Steel Structural Design</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Architectural Planning</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Vastu Consultation</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Building Supervision</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Waterproofing Solutions</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Site Inspection</div></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-5 container">
+    <h2 class="section-title text-center">Our Projects</h2>
+    <div class="row">
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Renovation & Restoration</h5><p>80-year-old mud wall building renovated at Keshwapur Hubli.</p></div></div>
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Residential Building Renovation</h5><p>20-year-old building at Kalidas Nagar Hubli renovated.</p></div></div>
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Innovative Building Project</h5><p>Residential building using interlocking mud-blocks at Hebballi village.</p></div></div>
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Architectural Residential Building</h5><p>Modern residential building at Gabbur village, Hubli.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">Completed Projects Gallery</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><a href="#img1"><div class="gallery-item"><img src="images/projects/gallery1.jpg" class="w-100"><div class="gallery-overlay">Project 1</div></div></a></div>
+        <div class="col-md-4"><a href="#img2"><div class="gallery-item"><img src="images/projects/gallery2.jpg" class="w-100"><div class="gallery-overlay">Project 2</div></div></a></div>
+        <div class="col-md-4"><a href="#img3"><div class="gallery-item"><img src="images/projects/gallery3.jpg" class="w-100"><div class="gallery-overlay">Project 3</div></div></a></div>
+        <div class="col-md-4"><a href="#img4"><div class="gallery-item"><img src="images/projects/gallery4.jpg" class="w-100"><div class="gallery-overlay">Project 4</div></div></a></div>
+        <div class="col-md-4"><a href="#img5"><div class="gallery-item"><img src="images/projects/gallery5.jpg" class="w-100"><div class="gallery-overlay">Project 5</div></div></a></div>
+        <div class="col-md-4"><a href="#img6"><div class="gallery-item"><img src="images/projects/gallery6.jpg" class="w-100"><div class="gallery-overlay">Project 6</div></div></a></div>
+      </div>
+    </div>
+  </section>
+
+    <section id="elevation" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">Elevation Designs Gallery</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><a href="#ele1"><div class="gallery-item"><img src="images/elevation/elevation1.jpg" class="w-100"><div class="gallery-overlay">Elevation 1</div></div></a></div>
+        <div class="col-md-4"><a href="#ele2"><div class="gallery-item"><img src="images/elevation/elevation2.jpg" class="w-100"><div class="gallery-overlay">Elevation 2</div></div></a></div>
+        <div class="col-md-4"><a href="#ele3"><div class="gallery-item"><img src="images/elevation/elevation3.jpg" class="w-100"><div class="gallery-overlay">Elevation 3</div></div></a></div>
+        <div class="col-md-4"><a href="#ele4"><div class="gallery-item"><img src="images/elevation/elevation4.jpg" class="w-100"><div class="gallery-overlay">Elevation 4</div></div></a></div>
+        <div class="col-md-4"><a href="#ele5"><div class="gallery-item"><img src="images/elevation/elevation5.jpg" class="w-100"><div class="gallery-overlay">Elevation 5</div></div></a></div>
+        <div class="col-md-4"><a href="#ele6"><div class="gallery-item"><img src="images/elevation/elevation6.jpg" class="w-100"><div class="gallery-overlay">Elevation 6</div></div></a></div>
+        <div class="col-md-4"><a href="#ele7"><div class="gallery-item"><img src="images/elevation/elevation7.jpg" class="w-100"><div class="gallery-overlay">Elevation 7</div></div></a></div>
+        <div class="col-md-4"><a href="#ele8"><div class="gallery-item"><img src="images/elevation/elevation8.jpg" class="w-100"><div class="gallery-overlay">Elevation 8</div></div></a></div>
+        <div class="col-md-4"><a href="#ele9"><div class="gallery-item"><img src="images/elevation/elevation9.jpg" class="w-100"><div class="gallery-overlay">Elevation 9</div></div></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Images -->
+  <div id="img1" class="lightbox"><a href="#gallery" class="close">&times;</a><a href="#img6" class="prev">&#10094;</a><img src="images/projects/gallery1.jpg"><a href="#img2" class="next">&#10095;</a></div>
+  <div id="img2" class="lightbox"><a href="#gallery" class="close">&times;</a><a href="#img1" class="prev">&#10094;</a><img src="images/projects/gallery2.jpg"><a href="#img3" class="next">&#10095;</a></div>
+  <div id="img3" class="lightbox"><a href="#gallery" class="close">&times;</a><a href="#img2" class="prev">&#10094;</a><img src="images/projects/gallery3.jpg"><a href="#img4" class="next">&#10095;</a></div>
+  <div id="img4" class="lightbox"><a href="#gallery" class="close">&times;</a><a href="#img3" class="prev">&#10094;</a><img src="images/projects/gallery4.jpg"><a href="#img5" class="next">&#10095;</a></div>
+  <div id="img5" class="lightbox"><a href="#gallery" class="close">&times;</a><a href="#img4" class="prev">&#10094;</a><img src="images/projects/gallery5.jpg"><a href="#img6" class="next">&#10095;</a></div>
+  <div id="img6" class="lightbox"><a href="#gallery" class="close">&times;</a><a href="#img5" class="prev">&#10094;</a><img src="images/projects/gallery6.jpg"><a href="#img1" class="next">&#10095;</a></div>
+
+  <!-- Lightbox Images -->
+  <div id="ele1" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele9" class="prev">&#10094;</a><img src="images/elevation/elevation1.jpg"><a href="#ele2" class="next">&#10095;</a></div>
+  <div id="ele2" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele1" class="prev">&#10094;</a><img src="images/elevation/elevation2.jpg"><a href="#ele3" class="next">&#10095;</a></div>
+  <div id="ele3" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele2" class="prev">&#10094;</a><img src="images/elevation/elevation3.jpg"><a href="#ele4" class="next">&#10095;</a></div>
+  <div id="ele4" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele3" class="prev">&#10094;</a><img src="images/elevation/elevation4.jpg"><a href="#ele5" class="next">&#10095;</a></div>
+  <div id="ele5" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele4" class="prev">&#10094;</a><img src="images/elevation/elevation5.jpg"><a href="#ele6" class="next">&#10095;</a></div>
+  <div id="ele6" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele5" class="prev">&#10094;</a><img src="images/elevation/elevation6.jpg"><a href="#ele7" class="next">&#10095;</a></div>
+  <div id="ele7" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele6" class="prev">&#10094;</a><img src="images/elevation/elevation7.jpg"><a href="#ele8" class="next">&#10095;</a></div>
+  <div id="ele8" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele7" class="prev">&#10094;</a><img src="images/elevation/elevation8.jpg"><a href="#ele9" class="next">&#10095;</a></div>
+  <div id="ele9" class="lightbox"><a href="#elevation" class="close">&times;</a><a href="#ele8" class="prev">&#10094;</a><img src="images/elevation/elevation9.jpg"><a href="#ele1" class="next">&#10095;</a></div>
+
+  <!-- Safety -->
+  <section id="safety" class="py-5 container">
+    <h2 class="section-title text-center">Safety Standards</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3"><div class="card p-3">Comprehensive safety training for all workers</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Restricted site access & supervision</div></div>
+      <div class="col-md-4 mb-3"><div class="card p-3">Mandatory safety gear usage</div></div>
+    </div>
+  </section>
+
+  <!-- Vastu -->
+  <section id="vastu" class="py-5 container text-center">
+    <h2 class="section-title">Vastu Shastra</h2>
+    <p>The ancient science of harmonious living. Vastu enhances health and well-being, attracts prosperity and success, fosters peace and harmony, and increases positive energy flow.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="section-title">Contact Us</h2>
+      <p>Patted Complex, Opp. Empire Square Building, Beside Haripriya Hotel, Shirur Park, Vidya Nagar, Hubballi, Karnataka 580021</p>
+      <p>📞 <a href="tel:9741579578">97415 79578</a>, <a href="tel:9019836590">90198 36590</a>, <a href="tel:7795985354">77959 85354</a>, <a href="tel:9980170504">99801 70504</a></p>  
+      <p>📱 <a href="https://wa.me/9019836590" target="_blank">9019836590 (WhatsApp)</a></p>
+      <p>📧 reconintofficial99@gmail.com</p>
+      <p>🕒 9 AM to 8 PM (Closed on Sundays)</p>
+      <iframe src="https://www.google.com/maps?q=Patted+Complex,+Shirur+Park,+Vidya+Nagar,+Hubballi,+Karnataka+580021&output=embed" width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <a href="tel:9741579578" class="call"><i class="bi bi-telephone"></i></a>
+    <a href="https://wa.me/9019836590" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <img src="images/recon-logo.png" height="150" class="mb-2"><br>
+    &copy; 2025 RECON Interiors and Constructions. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
