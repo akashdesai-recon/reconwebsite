@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <style>
     body {font-family: Arial, sans-serif; background: #fff;}
-    .navbar {background-color: #220b01;}
+    .navbar {background-color: #0d8f87;}
     .navbar-nav .nav-link {color: #fff; font-weight: 600;}
     .navbar-nav .nav-link:hover {color: #ffcccc;}
     .hero-section {position: relative; text-align: center; color: #fff;}
@@ -16,17 +16,17 @@
     .hero-text {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
     .hero-text h1 {font-size: 2.5rem; font-weight: bold;}
     .hero-text p {font-size: 1.2rem;}
-    .section-title {color:#220b01; font-weight: bold; margin-bottom: 40px;}
+    .section-title {color:#0d8f87; font-weight: bold; margin-bottom: 40px;}
     .card {border-radius: 15px;}
     .gallery-item {position:relative; overflow:hidden; border-radius:15px; cursor:pointer;}
     .gallery-item img {transition: transform 0.5s;}
     .gallery-item:hover img {transform: scale(1.1);}
     .gallery-overlay {position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(123,15,15,0.6);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s;}
     .gallery-item:hover .gallery-overlay {opacity:1;}
-    footer {background:#220b01; color:#fff; padding:20px 0;}
+    footer {background:#0d8f87; color:#fff; padding:20px 0;}
     .floating-buttons {position:fixed;bottom:20px;right:20px;z-index:999;display:flex;flex-direction:column;gap:10px;}
     .floating-buttons a {display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;color:#fff;}
-    .floating-buttons .call {background:#220b01;}
+    .floating-buttons .call {background:#0d8f87;}
     .floating-buttons .whatsapp {background:#25d366;}
 
     /* Lightbox */
@@ -40,11 +40,12 @@
     .lightbox .close {top:20px;right:30px;transform:none;font-size:2.5rem;}
     .lightbox .prev {left:30px;}
     .lightbox .next {right:30px;}
+    .nav-bg{background: #03423d ;background: linear-gradient(90deg,rgba(3, 66, 61, 1) 0%, rgba(30, 179, 169, 1) 50%, rgba(3, 66, 61, 1) 100%) !important;}
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top nav-bg">
     <div class="container">
       <a class="navbar-brand text-white fw-bold" href="#">
         <img src="images/recon-logo.png" alt="RECON Logo" height="60"> RECON
@@ -85,10 +86,10 @@
     <div class="container">
       <h2 class="section-title text-center">Packages for Building Constructions</h2>
       <div class="row text-center">
-        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Classic</h4><p class="text-danger fw-bold">₹1,872/sq.ft</p></div></div>
-        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Standard</h4><p class="text-danger fw-bold">₹2,151/sq.ft</p></div></div>
-        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Premium-I</h4><p class="text-danger fw-bold">₹2,511/sq.ft</p></div></div>
-        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Premium-II</h4><p class="text-danger fw-bold">₹2,691/sq.ft</p></div></div>
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Classic</h4><p class="text-warning fw-bold">₹1,872/sq.ft</p></div></div>
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Standard</h4><p class="text-warning fw-bold">₹2,151/sq.ft</p></div></div>
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Premium-I</h4><p class="text-warning fw-bold">₹2,511/sq.ft</p></div></div>
+        <div class="col-md-3 mb-3"><div class="card p-4"><h4>Premium-II</h4><p class="text-warning fw-bold">₹2,691/sq.ft</p></div></div>
       </div>
     </div>
   </section>
@@ -116,10 +117,10 @@
   <section id="projects" class="py-5 container">
     <h2 class="section-title text-center">Our Projects</h2>
     <div class="row">
-      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Renovation & Restoration</h5><p>80-year-old mud wall building renovated at Keshwapur Hubli.</p></div></div>
-      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Residential Building Renovation</h5><p>20-year-old building at Kalidas Nagar Hubli renovated.</p></div></div>
-      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Innovative Building Project</h5><p>Residential building using interlocking mud-blocks at Hebballi village.</p></div></div>
-      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-danger">Architectural Residential Building</h5><p>Modern residential building at Gabbur village, Hubli.</p></div></div>
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-warning">Renovation & Restoration</h5><p>80-year-old mud wall building renovated at Keshwapur Hubli.</p></div></div>
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-warning">Residential Building Renovation</h5><p>20-year-old building at Kalidas Nagar Hubli renovated.</p></div></div>
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-warning">Innovative Building Project</h5><p>Residential building using interlocking mud-blocks at Hebballi village.</p></div></div>
+      <div class="col-md-6 mb-3"><div class="card p-3"><h5 class="text-warning">Architectural Residential Building</h5><p>Modern residential building at Gabbur village, Hubli.</p></div></div>
     </div>
   </section>
 
@@ -210,7 +211,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="text-center">
+  <footer class="text-center nav-bg">
     <img src="images/recon-logo.png" height="150" class="mb-2"><br>
     &copy; 2025 RECON Interiors and Constructions. All rights reserved.
   </footer>
